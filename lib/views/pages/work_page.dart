@@ -25,9 +25,7 @@ class _WorkPageState extends State<WorkPage> {
                 borderRadius: BorderRadius.circular(20.0),
               ),
             ),
-            onEditingComplete: () {
-              setState(() {});
-            },
+            onEditingComplete: () => setState(() {}),
           ),
         ),
         Padding(
