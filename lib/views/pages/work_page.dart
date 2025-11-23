@@ -55,7 +55,18 @@ class _WorkPageState extends State<WorkPage> {
           },
         ),
         CheckboxListTile(
-          title: Text("Click me!"),
+          title: Row(
+            children: [
+              Text("Hello world"),
+              Icon(Icons.mobile_friendly),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [Text("Hellow")],
+                ),
+              ),
+            ],
+          ),
           tristate: true,
           value: isChecked,
           onChanged: (bool? value) {
