@@ -17,7 +17,9 @@ class WidgetTree extends StatelessWidget {
         title: ValueListenableBuilder(
           valueListenable: isDarkModeNotifier,
           builder: (BuildContext context, dynamic isDarkMode, Widget? child) {
-            return Text('Cha Coding', style: TextStyle(color: Colors.white));
+            return isDarkMode
+                ? Text('Cha Coding', style: TextStyle(color: Colors.yellow))
+                : Text('Cha Coding', style: TextStyle(color: Colors.white));
           },
         ),
         backgroundColor: Colors.teal[800],
