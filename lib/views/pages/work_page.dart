@@ -47,7 +47,7 @@ class _WorkPageState extends State<WorkPage> {
         Checkbox(
           tristate: true,
           value: isChecked1,
-          onChanged: (bool? value) {
+          onChanged: (value) {
             setState(() {
               isChecked1 = value;
             });
