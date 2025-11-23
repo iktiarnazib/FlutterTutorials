@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/data/notifiers.dart';
 import 'package:news/views/widget_tree.dart';
 import 'package:news/views/widgets/nav_bar_widget.dart';
 
@@ -21,15 +22,20 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.green,
-          brightness: Brightness.dark,
-        ),
-      ),
-      home: WidgetTree(),
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+      builder: (BuildContext context, dynamic isDarkMode, Widget? child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.green,
+              brightness: isDarkMode ? Brightness.dark : Brightness.light,
+            ),
+          ),
+          home: WidgetTree(),
+        );
+      },
     );
   }
 }

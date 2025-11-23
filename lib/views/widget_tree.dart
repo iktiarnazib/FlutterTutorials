@@ -17,8 +17,28 @@ class WidgetTree extends StatelessWidget {
         title: Text('Cha Coding'),
         backgroundColor: Colors.teal[800],
         actions: [
-          Text("Exit", style: TextStyle(fontSize: 18.0)),
-          Icon(Icons.exit_to_app, size: 30.0),
+          ValueListenableBuilder(
+            valueListenable: isDarkModeNotifier,
+            builder: (BuildContext context, dynamic isDarkMode, Widget? child) {
+              return isDarkMode
+                  ? Text("Dark mode", style: TextStyle(fontSize: 18.0))
+                  : Text("Light mode", style: TextStyle(fontSize: 18.0));
+            },
+          ),
+          IconButton(
+            onPressed: () {
+              isDarkModeNotifier.value = !isDarkModeNotifier.value;
+            },
+            icon: ValueListenableBuilder(
+              valueListenable: isDarkModeNotifier,
+              builder:
+                  (BuildContext context, dynamic isDarkMode, Widget? child) {
+                    return isDarkMode
+                        ? Icon(Icons.dark_mode)
+                        : Icon(Icons.light_mode);
+                  },
+            ),
+          ),
         ],
       ),
       body: ValueListenableBuilder(
