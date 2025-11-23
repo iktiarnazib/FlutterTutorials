@@ -13,18 +13,36 @@ class _WorkPageState extends State<WorkPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text("Plesae input your text!"),
+        Text("Input your text here!"),
         Padding(
           padding: const EdgeInsets.all(20.0),
           child: TextField(
             controller: controller,
-            decoration: InputDecoration(border: OutlineInputBorder()),
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
             onEditingComplete: () {
               setState(() {});
             },
           ),
         ),
-        Text(controller.text),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Wrap(
+            children: [
+              Text(
+                controller.text,
+                style: TextStyle(
+                  color: Colors.pink,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
