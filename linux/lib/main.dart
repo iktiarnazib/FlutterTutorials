@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news/data/notifiers.dart';
-import 'package:news/views/widget_tree.dart';
-import 'package:news/views/widgets/nav_bar_widget.dart';
+import 'data/notifiers.dart';
+import 'views/widget_tree.dart';
+import 'views/widgets/nav_bar_widget.dart';
 
 void main() {
   runApp(const MyApp());

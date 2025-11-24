@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news/data/notifiers.dart';
+
+import '../../data/notifiers.dart';
 
 class NavBarWidget extends StatelessWidget {
   const NavBarWidget({super.key});
@@ -12,7 +13,6 @@ class NavBarWidget extends StatelessWidget {
         return NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.work), label: 'Work'),
             NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
           ],
           onDestinationSelected: (int value) {

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:news/data/notifiers.dart';
-import 'package:news/views/pages/home_page.dart';
-import 'package:news/views/pages/profile_page.dart';
-import 'package:news/views/pages/work_page.dart';
-import 'package:news/views/widgets/nav_bar_widget.dart';
 
-List<Widget> pageList = [HomePage(), WorkPage(), ProfilePage()];
+import '../data/notifiers.dart';
+import 'pages/home_page.dart';
+import 'pages/profile_page.dart';
+import 'pages/settings_page.dart';
+import 'widgets/nav_bar_widget.dart';
+
+List<Widget> pageList = [HomePage(), ProfilePage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
@@ -14,25 +15,15 @@ class WidgetTree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: ValueListenableBuilder(
-          valueListenable: isDarkModeNotifier,
-          builder: (BuildContext context, dynamic isDarkMode, Widget? child) {
-            return isDarkMode
-                ? Text('Cha Coding', style: TextStyle(color: Colors.yellow))
-                : Text('Cha Coding', style: TextStyle(color: Colors.white));
-          },
-        ),
+        title: Text('Cha Coding'),
         backgroundColor: Colors.teal[800],
         actions: [
           ValueListenableBuilder(
             valueListenable: isDarkModeNotifier,
             builder: (BuildContext context, dynamic isDarkMode, Widget? child) {
               return isDarkMode
-                  ? Text("Dark Mode", style: TextStyle(fontSize: 18.0))
-                  : Text(
-                      "Light Mode",
-                      style: TextStyle(fontSize: 18.0, color: Colors.white),
-                    );
+                  ? Text("Dark mode", style: TextStyle(fontSize: 18.0))
+                  : Text("Light mode", style: TextStyle(fontSize: 18.0));
             },
           ),
           IconButton(
@@ -45,9 +36,22 @@ class WidgetTree extends StatelessWidget {
                   (BuildContext context, dynamic isDarkMode, Widget? child) {
                     return isDarkMode
                         ? Icon(Icons.dark_mode)
-                        : Icon(Icons.light_mode, color: Colors.white);
+                        : Icon(Icons.light_mode);
                   },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingsPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ),
