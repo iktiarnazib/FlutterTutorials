@@ -105,20 +105,30 @@ class _WorkPageState extends State<WorkPage> {
               });
             },
           ),
-          Slider.adaptive(
-            max: 10.0,
-            divisions: 20,
-            value: isSlider,
-            onChanged: (double value) {
-              setState(() {
-                isSlider = value;
-              });
-              print(isSlider);
+          GestureDetector(
+            onTap: () {
+              print("This is slider");
             },
+            child: Slider.adaptive(
+              max: 10.0,
+              divisions: 20,
+              value: isSlider,
+              onChanged: (double value) {
+                setState(() {
+                  isSlider = value;
+                });
+                print(isSlider);
+              },
+            ),
           ),
-          Image.asset("assets/images/img.jpeg"),
-          SizedBox(height: 20.0),
-          Image.asset("assets/images/img.jpeg"),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                isOn = !isOn;
+              });
+            },
+            child: Image.asset("assets/images/img.jpeg"),
+          ),
         ],
       ),
     );
