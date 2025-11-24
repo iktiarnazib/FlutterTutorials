@@ -44,7 +44,7 @@ class _WorkPageState extends State<WorkPage> {
             ],
           ),
         ),
-        Checkbox(
+        Checkbox.adaptive(
           tristate: true,
           value: isChecked1,
           onChanged: (value) {
@@ -53,7 +53,7 @@ class _WorkPageState extends State<WorkPage> {
             });
           },
         ),
-        CheckboxListTile(
+        CheckboxListTile.adaptive(
           title: Row(
             children: [
               Text("Hello world"),
@@ -74,7 +74,7 @@ class _WorkPageState extends State<WorkPage> {
             });
           },
         ),
-        Switch(
+        Switch.adaptive(
           value: isOn,
           onChanged: (bool value) {
             setState(() {
@@ -82,7 +82,7 @@ class _WorkPageState extends State<WorkPage> {
             });
           },
         ),
-        SwitchListTile(
+        SwitchListTile.adaptive(
           title: Row(
             children: [
               Icon(Icons.turned_in, color: Colors.amber),
