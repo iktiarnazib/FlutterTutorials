@@ -18,6 +18,7 @@ class _WorkPageState extends State<WorkPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Input your text here!"),
           Padding(
@@ -144,6 +145,40 @@ class _WorkPageState extends State<WorkPage> {
               color: Colors.white12,
             ),
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.pink,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              print("Elevated button has been clicked!");
+            },
+            child: Text("Elevated Button"),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              print("Filled button clicked");
+            },
+            child: Text("Filled button"),
+          ),
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.yellow,
+              foregroundColor: Colors.black,
+            ),
+            child: Text("Text Button"),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("Elevated Button Normal"),
+          ),
+          FilledButton(onPressed: () {}, child: Text("Filled Button Normal")),
+          TextButton(onPressed: () {}, child: Text("Text Button Normal")),
         ],
       ),
     );
