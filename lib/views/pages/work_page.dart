@@ -124,10 +124,25 @@ class _WorkPageState extends State<WorkPage> {
           GestureDetector(
             onTap: () {
               setState(() {
-                isOn = !isOn;
+                print("The image has been clicked");
               });
             },
             child: Image.asset("assets/images/img.jpeg"),
+          ),
+          SizedBox(height: 20.0),
+          InkWell(
+            splashColor: Colors.purple,
+            onTap: () {
+              print("This is the container from InkWell widget");
+              setState(() {
+                isOn = !isOn;
+              });
+            },
+            child: Container(
+              height: 200.0,
+              width: double.infinity,
+              color: Colors.white12,
+            ),
           ),
         ],
       ),
