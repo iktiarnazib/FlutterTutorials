@@ -179,6 +179,12 @@ class _WorkPageState extends State<WorkPage> {
           ),
           FilledButton(onPressed: () {}, child: Text("Filled Button Normal")),
           TextButton(onPressed: () {}, child: Text("Text Button Normal")),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text("Outlined Button Simple"),
+          ),
+          BackButton(),
+          CloseButton(),
         ],
       ),
     );
