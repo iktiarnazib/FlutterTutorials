@@ -13,7 +13,7 @@ class _WorkPageState extends State<WorkPage> {
   bool? isChecked1 = true;
   bool isOn = true;
   double isSlider = 0.0;
-
+  String? isSelected = "g3";
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -135,9 +135,7 @@ class _WorkPageState extends State<WorkPage> {
             splashColor: Colors.purple,
             onTap: () {
               print("This is the container from InkWell widget");
-              setState(() {
-                isOn = !isOn;
-              });
+              setState(() {});
             },
             child: Container(
               height: 200.0,
@@ -185,6 +183,19 @@ class _WorkPageState extends State<WorkPage> {
           ),
           BackButton(),
           CloseButton(),
+          DropdownButton(
+            value: isSelected,
+            items: [
+              DropdownMenuItem(value: "g1", child: Text("goo 1")),
+              DropdownMenuItem(value: "g2", child: Text("goo 2")),
+              DropdownMenuItem(value: "g3", child: Text("goo 3")),
+            ],
+            onChanged: (String? value) {
+              setState(() {
+                isSelected = value;
+              });
+            },
+          ),
         ],
       ),
     );
