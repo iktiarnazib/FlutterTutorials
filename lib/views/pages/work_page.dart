@@ -16,106 +16,108 @@ class _WorkPageState extends State<WorkPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("Input your text here!"),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: TextField(
-            controller: controller,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20.0),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Text("Input your text here!"),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              controller: controller,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
               ),
+              onEditingComplete: () => setState(() {}),
             ),
-            onEditingComplete: () => setState(() {}),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Wrap(
-            children: [
-              Text(
-                controller.text,
-                style: TextStyle(
-                  color: Colors.pink,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Wrap(
+              children: [
+                Text(
+                  controller.text,
+                  style: TextStyle(
+                    color: Colors.pink,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        Checkbox.adaptive(
-          tristate: true,
-          value: isChecked1,
-          onChanged: (value) {
-            setState(() {
-              isChecked1 = value;
-            });
-          },
-        ),
-        CheckboxListTile.adaptive(
-          title: Row(
-            children: [
-              Text("Hello world"),
-              Icon(Icons.mobile_friendly),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [Text("Hellow")],
+          Checkbox.adaptive(
+            tristate: true,
+            value: isChecked1,
+            onChanged: (value) {
+              setState(() {
+                isChecked1 = value;
+              });
+            },
+          ),
+          CheckboxListTile.adaptive(
+            title: Row(
+              children: [
+                Text("Hello world"),
+                Icon(Icons.mobile_friendly),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [Text("Hellow")],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
+            tristate: true,
+            value: isChecked,
+            onChanged: (bool? value) {
+              setState(() {
+                isChecked = value;
+              });
+            },
           ),
-          tristate: true,
-          value: isChecked,
-          onChanged: (bool? value) {
-            setState(() {
-              isChecked = value;
-            });
-          },
-        ),
-        Switch.adaptive(
-          value: isOn,
-          onChanged: (bool value) {
-            setState(() {
-              isOn = value;
-            });
-          },
-        ),
-        SwitchListTile.adaptive(
-          title: Row(
-            children: [
-              Icon(Icons.turned_in, color: Colors.amber),
-              Text("Saved", style: TextStyle(fontSize: 20.0)),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [Text("Switch"), Icon(Icons.lock_clock)],
+          Switch.adaptive(
+            value: isOn,
+            onChanged: (bool value) {
+              setState(() {
+                isOn = value;
+              });
+            },
+          ),
+          SwitchListTile.adaptive(
+            title: Row(
+              children: [
+                Icon(Icons.turned_in, color: Colors.amber),
+                Text("Saved", style: TextStyle(fontSize: 20.0)),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [Text("Switch"), Icon(Icons.lock_clock)],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
+            value: isOn,
+            onChanged: (bool value) {
+              setState(() {
+                isOn = value;
+              });
+            },
           ),
-          value: isOn,
-          onChanged: (bool value) {
-            setState(() {
-              isOn = value;
-            });
-          },
-        ),
-        Slider.adaptive(
-          max: 10.0,
-          divisions: 20,
-          value: isSlider,
-          onChanged: (double value) {
-            setState(() {
-              isSlider = value;
-            });
-            print(isSlider);
-          },
-        ),
-      ],
+          Slider.adaptive(
+            max: 10.0,
+            divisions: 20,
+            value: isSlider,
+            onChanged: (double value) {
+              setState(() {
+                isSlider = value;
+              });
+              print(isSlider);
+            },
+          ),
+        ],
+      ),
     );
   }
 }
