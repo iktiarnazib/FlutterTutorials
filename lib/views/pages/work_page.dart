@@ -116,6 +116,9 @@ class _WorkPageState extends State<WorkPage> {
               print(isSlider);
             },
           ),
+          Image.asset("assets/images/img.jpeg"),
+          SizedBox(height: 20.0),
+          Image.asset("assets/images/img.jpeg"),
         ],
       ),
     );
