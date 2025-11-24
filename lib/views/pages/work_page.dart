@@ -135,9 +135,7 @@ class _WorkPageState extends State<WorkPage> {
             splashColor: Colors.purple,
             onTap: () {
               print("This is the container from InkWell widget");
-              setState(() {
-                isOn = !isOn;
-              });
+              setState(() {});
             },
             child: Container(
               height: 200.0,
