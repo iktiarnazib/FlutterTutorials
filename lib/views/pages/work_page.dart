@@ -12,6 +12,8 @@ class _WorkPageState extends State<WorkPage> {
   bool? isChecked = true;
   bool? isChecked1 = true;
   bool isOn = true;
+  double isSlider = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -100,6 +102,17 @@ class _WorkPageState extends State<WorkPage> {
             setState(() {
               isOn = value;
             });
+          },
+        ),
+        Slider.adaptive(
+          max: 10.0,
+          divisions: 20,
+          value: isSlider,
+          onChanged: (double value) {
+            setState(() {
+              isSlider = value;
+            });
+            print(isSlider);
           },
         ),
       ],
