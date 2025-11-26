@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
-import 'settings_page.dart';
+import 'package:news/data/notifiers.dart';
 import 'welcome_page.dart';
 
 class ProfilePage extends StatelessWidget {
