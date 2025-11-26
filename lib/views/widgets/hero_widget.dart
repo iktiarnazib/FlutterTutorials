@@ -20,7 +20,11 @@ class HeroWidget extends StatelessWidget {
               ),
             );
           },
-          child: Image.asset("assets/images/img.jpeg"),
+          child: Image.asset(
+            "assets/images/img.jpeg",
+            color: Colors.teal,
+            colorBlendMode: BlendMode.darken,
+          ),
         ),
       ),
     );

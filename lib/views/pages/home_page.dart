@@ -13,14 +13,17 @@ class HomePage extends StatelessWidget {
         children: [
           HeroWidget(),
           SizedBox(height: 20.0),
-          FilledButton(
+          OutlinedButton(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   duration: Duration(seconds: 5),
-                  backgroundColor: Colors.pink,
+                  backgroundColor: Colors.teal,
                   behavior: SnackBarBehavior.floating,
-                  content: Text("Snackbar IS HERE!"),
+                  content: Text(
+                    "The Snackbar has been pressed",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               );
             },
