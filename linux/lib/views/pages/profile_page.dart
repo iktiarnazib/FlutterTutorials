@@ -12,19 +12,18 @@ class ProfilePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Go to settings page using this"),
           FilledButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SettingsPage();
+                    return SettingsPage(title: "Settings 2");
                   },
                 ),
               );
             },
-            child: Text("Settings Page"),
+            child: Text("Settings page"),
           ),
         ],
       ),
