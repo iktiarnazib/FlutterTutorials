@@ -26,19 +26,6 @@ class ProfilePage extends StatelessWidget {
             },
             child: Text("Settings Page"),
           ),
-          OutlinedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return HomePage();
-                  },
-                ),
-              );
-            },
-            child: Text('Home Button'),
-          ),
         ],
       ),
     );

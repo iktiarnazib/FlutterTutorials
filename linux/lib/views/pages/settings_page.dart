@@ -114,7 +114,7 @@ class _SettingsPageState extends State<SettingsPage> {
               },
               child: Slider.adaptive(
                 max: 10.0,
-                divisions: 20,
+                divisions: 10,
                 value: isSlider,
                 onChanged: (double value) {
                   setState(() {
