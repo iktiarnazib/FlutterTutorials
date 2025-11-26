@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'home_page.dart';
 import 'settings_page.dart';
+import 'welcome_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -10,20 +11,20 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          FilledButton(
-            onPressed: () {
-              Navigator.push(
+          ListTile(
+            onTap: () {
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SettingsPage(title: "Settings 2");
+                    return WelcomePage();
                   },
                 ),
               );
             },
-            child: Text("Settings page"),
+            title: Text("Log Out", style: TextStyle(fontSize: 20.0)),
           ),
         ],
       ),
