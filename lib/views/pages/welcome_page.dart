@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widget_tree.dart';
+import '../widgets/hero_widget.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,10 +14,7 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadiusGeometry.circular(20.0),
-              child: Image.asset("assets/images/img.jpeg"),
-            ),
+            HeroWidget(),
             SizedBox(height: 20.0),
             FilledButton(
               onPressed: () {
