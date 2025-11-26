@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/data/notifiers.dart';
 
 import '../widget_tree.dart';
 import '../widgets/hero_widget.dart';
@@ -22,6 +23,7 @@ class WelcomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
+                      selectedIndexNotifier.value = 0;
                       return WidgetTree();
                     },
                   ),

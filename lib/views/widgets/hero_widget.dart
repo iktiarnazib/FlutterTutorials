@@ -8,8 +8,20 @@ class HeroWidget extends StatelessWidget {
     return Hero(
       tag: "Hero 1",
       child: ClipRRect(
-        borderRadius: BorderRadiusGeometry.circular(20.0),
-        child: Image.asset("assets/images/img.jpeg"),
+        borderRadius: BorderRadius.circular(20.0),
+        child: GestureDetector(
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                duration: Duration(seconds: 5),
+                backgroundColor: Colors.yellow,
+                behavior: SnackBarBehavior.floating,
+                content: Text("Image cannot be clicked!"),
+              ),
+            );
+          },
+          child: Image.asset("assets/images/img.jpeg"),
+        ),
       ),
     );
   }

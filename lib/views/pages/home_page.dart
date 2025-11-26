@@ -9,7 +9,25 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Column(children: [HeroWidget()]),
+      child: Column(
+        children: [
+          HeroWidget(),
+          SizedBox(height: 20.0),
+          FilledButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  duration: Duration(seconds: 5),
+                  backgroundColor: Colors.pink,
+                  behavior: SnackBarBehavior.floating,
+                  content: Text("Snackbar IS HERE!"),
+                ),
+              );
+            },
+            child: Text("Show Snackbar"),
+          ),
+        ],
+      ),
     );
   }
 }
