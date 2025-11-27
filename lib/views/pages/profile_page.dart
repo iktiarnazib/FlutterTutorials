@@ -25,7 +25,6 @@ class ProfilePage extends StatelessWidget {
                   ),
                 );
               },
-
               title: Text("Log Out", style: TextStyle(fontSize: 19.0)),
             ),
           ),
