@@ -12,7 +12,24 @@ class HomePage extends StatelessWidget {
       child: Column(
         children: [
           HeroWidget(),
-
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 20.0),
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Welcome to Iktiar's app"),
+                    Text(
+                      "This app is designed to help the newcomers learn Flutter faster",
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
           SizedBox(height: 20.0),
           OutlinedButton(
             onPressed: () {
