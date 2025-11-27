@@ -45,11 +45,9 @@ class HomePage extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Center(
-                          child: Container(
-                            height: 40.0,
-                            child: Center(child: Text("Close")),
-                          ),
+                        child: Container(
+                          height: 40.0,
+                          child: Center(child: Text("Close")),
                         ),
                       ),
                     ],
