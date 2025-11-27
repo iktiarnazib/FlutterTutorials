@@ -29,6 +29,36 @@ class HomePage extends StatelessWidget {
             },
             child: Text("Show Snackbar"),
           ),
+          OutlinedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog.adaptive(
+                    title: Text(
+                      "This is alert Dialog",
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    content: Text("You shouldn't press the alert dialog!"),
+                    actions: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Center(
+                          child: Container(
+                            height: 40.0,
+                            child: Center(child: Text("Close")),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Text("Alert Dialog"),
+          ),
         ],
       ),
     );
