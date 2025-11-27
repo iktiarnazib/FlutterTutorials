@@ -19,11 +19,11 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: 20.0),
             FilledButton(
               onPressed: () {
+                selectedIndexNotifier.value = 0;
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      selectedIndexNotifier.value = 0;
                       return WidgetTree();
                     },
                   ),
