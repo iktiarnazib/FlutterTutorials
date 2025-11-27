@@ -17,12 +17,14 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Lottie.asset("assets/lotties/Home.json"),
-            Text(
-              "Welcome to Flutter",
-              style: TextStyle(
-                fontSize: 100.0,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 10.0,
+            FittedBox(
+              child: Text(
+                "Welcome to Flutter",
+                style: TextStyle(
+                  fontSize: 150.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 10.0,
+                ),
               ),
             ),
             SizedBox(height: 20.0),
