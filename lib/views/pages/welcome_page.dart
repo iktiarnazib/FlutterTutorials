@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:news/data/notifiers.dart';
 
 import '../widget_tree.dart';
@@ -15,7 +16,15 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HeroWidget(),
+            Lottie.asset("assets/lotties/Home.json"),
+            Text(
+              "Welcome to Flutter",
+              style: TextStyle(
+                fontSize: 100.0,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 10.0,
+              ),
+            ),
             SizedBox(height: 20.0),
             FilledButton(
               onPressed: () {
