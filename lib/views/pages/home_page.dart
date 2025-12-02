@@ -99,7 +99,7 @@ class HomePage extends StatelessWidget {
               indent: 30.0,
               endIndent: 30.0,
             ),
-            Container(height: 30.0, child: VerticalDivider(color: Colors.blue)),
+            SizedBox(height: 30.0, child: VerticalDivider(color: Colors.blue)),
             OutlinedButton(
               onPressed: () {
                 showDialog(

@@ -21,7 +21,7 @@ class HeroWidget extends StatelessWidget {
             );
           },
           child: Image.asset(
-            "assets/images/img.jpeg",
+            "assets/images/new.jpeg",
             color: Colors.amber,
             colorBlendMode: BlendMode.darken,
           ),

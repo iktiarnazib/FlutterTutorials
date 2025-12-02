@@ -3,7 +3,6 @@ import 'package:lottie/lottie.dart';
 import 'package:news/data/notifiers.dart';
 
 import '../widget_tree.dart';
-import '../widgets/hero_widget.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -40,6 +39,26 @@ class WelcomePage extends StatelessWidget {
                   ),
                 );
               },
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 40.0),
+              ),
+              child: Text("Register"),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                selectedIndexNotifier.value = 0;
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WidgetTree();
+                    },
+                  ),
+                );
+              },
+              style: OutlinedButton.styleFrom(
+                minimumSize: Size(double.infinity, 40.0),
+              ),
               child: Text("Login"),
             ),
           ],
