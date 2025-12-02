@@ -10,8 +10,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController controllerEmail = TextEditingController();
-  TextEditingController controllerPass = TextEditingController();
+  TextEditingController controllerEmail = TextEditingController(
+    text: 'iktiar@gmail.com',
+  );
+  TextEditingController controllerPass = TextEditingController(text: '9086');
+  String authServiceEmail = 'iktiar@gmail.com';
+  String authServicePass = '9086';
+  String errorMessage = '';
   @override
   void initState() {
     print('InitState initiated');
@@ -58,17 +63,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onEditingComplete: () => setState(() {}),
             ),
-            SizedBox(height: 10.0),
+            Text(errorMessage, style: TextStyle(color: Colors.red)),
             FilledButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WidgetTree();
-                    },
-                  ),
-                );
+                onLogin();
               },
               style: FilledButton.styleFrom(
                 minimumSize: Size(double.infinity, 40.0),
@@ -79,5 +77,26 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void onLogin() {
+    if (authServiceEmail == controllerEmail.text &&
+        authServicePass == controllerPass.text) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return WidgetTree();
+          },
+        ),
+      );
+      setState(() {
+        errorMessage = '';
+      });
+    } else {
+      setState(() {
+        errorMessage = 'Invalid Credentials';
+      });
+    }
   }
 }
