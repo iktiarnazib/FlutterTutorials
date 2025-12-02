@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key, required this.title});
@@ -132,7 +131,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   print("The image has been clicked");
                 });
               },
-              child: Image.asset("assets/images/img.jpeg"),
+              child: Image.asset("assets/images/new.jpeg"),
             ),
             SizedBox(height: 20.0),
             InkWell(
