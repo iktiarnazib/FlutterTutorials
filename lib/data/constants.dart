@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+class KConstants {
+  static const String themeModeKey = 'ThemeModeKey';
+}
+
 class KTextStyle {
   static const TextStyle titleTextSyle = TextStyle(
     color: Colors.teal,
