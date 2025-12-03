@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:news/data/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'data/notifiers.dart';
 import 'views/pages/welcome_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  final bool? repeat = prefs.getBool(KConstants.themeModeKey);
+  isDarkModeNotifier.value = repeat ?? true;
+
   runApp(const MyApp());
 }
 
