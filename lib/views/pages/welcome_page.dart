@@ -35,7 +35,7 @@ class WelcomePage extends StatelessWidget {
                 FilledButton(
                   onPressed: () {
                     selectedIndexNotifier.value = 0;
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
@@ -52,7 +52,7 @@ class WelcomePage extends StatelessWidget {
                 OutlinedButton(
                   onPressed: () {
                     selectedIndexNotifier.value = 0;
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {

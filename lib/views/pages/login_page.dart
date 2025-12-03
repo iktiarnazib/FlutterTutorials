@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/views/pages/welcome_page.dart';
 import 'package:news/views/widget_tree.dart';
 import 'package:news/views/widgets/hero_widget.dart';
 
@@ -86,13 +87,14 @@ class _LoginPageState extends State<LoginPage> {
   void onLogin() {
     if (authServiceEmail == controllerEmail.text &&
         authServicePass == controllerPass.text) {
-      Navigator.pushReplacement(
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) {
             return WidgetTree();
           },
         ),
+        (route) => false,
       );
       setState(() {
         errorMessage = '';
