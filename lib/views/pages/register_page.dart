@@ -15,53 +15,57 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Register Page")),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            HeroWidget(title: 'Register'),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                HeroWidget(title: 'Register'),
 
-            SizedBox(height: 20.0),
-            TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                hintText: 'Email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-              onEditingComplete: () => setState(() {}),
-            ),
-            SizedBox(height: 10.0),
-            TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                hintText: 'Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-              onEditingComplete: () => setState(() {}),
-            ),
-            SizedBox(height: 10.0),
-            FilledButton(
-              onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WidgetTree();
-                    },
+                SizedBox(height: 20.0),
+                TextField(
+                  controller: controller,
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
                   ),
-                );
-              },
-              style: FilledButton.styleFrom(
-                minimumSize: Size(double.infinity, 40.0),
-              ),
-              child: Text("Register"),
+                  onEditingComplete: () => setState(() {}),
+                ),
+                SizedBox(height: 10.0),
+                TextField(
+                  controller: controller,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                  onEditingComplete: () => setState(() {}),
+                ),
+                SizedBox(height: 10.0),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return WidgetTree();
+                        },
+                      ),
+                    );
+                  },
+                  style: FilledButton.styleFrom(
+                    minimumSize: Size(double.infinity, 40.0),
+                  ),
+                  child: Text("Register"),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
