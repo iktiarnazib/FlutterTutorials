@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class KConstants {
-  static const String themeModeKey = 'ThemeModeKey';
+  static const String themeMode = 'ThemeMode';
 }
 
 class KTextStyle {
