@@ -24,7 +24,7 @@ class HeroWidget extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return HeroPage();
+                            return onPage!;
                           },
                         ),
                       );

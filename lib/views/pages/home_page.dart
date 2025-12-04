@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:news/data/constants.dart';
 import 'package:news/views/pages/hero_page.dart';
+import 'package:news/views/pages/login_page.dart';
 import 'package:news/views/widgets/card_widget.dart';
 import '../widgets/hero_widget.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   List<String> title = [
     KTexts.Welcome,
     KTexts.HowTo,
@@ -30,7 +36,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            HeroWidget(title: 'Cha Coding', onPage: HeroPage()),
+            HeroWidget(title: 'Cha Coding', onPage: LoginPage()),
             Column(
               children: List.generate(title.length, (index) {
                 return CardWidget(

@@ -14,7 +14,7 @@ class ProfilePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: 20.0),
-          HeroWidget(title: 'Profile Page', onPage: HeroPage()),
+          HeroWidget(title: 'Profile Page', onPage: OnboardingPage()),
           SizedBox(height: 20.0),
           SizedBox(
             height: 60.0,
