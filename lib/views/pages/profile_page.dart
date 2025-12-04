@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news/views/pages/hero_page.dart';
+import 'package:news/views/pages/onboarding_page.dart';
+import 'package:news/views/widgets/hero_widget.dart';
 import 'welcome_page.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -10,6 +13,9 @@ class ProfilePage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(height: 20.0),
+          HeroWidget(title: 'Profile Page', onPage: HeroPage()),
+          SizedBox(height: 20.0),
           SizedBox(
             height: 60.0,
             child: ListTile(
