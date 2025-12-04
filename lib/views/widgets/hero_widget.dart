@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:news/data/constants.dart';
+import 'package:news/views/pages/hero_page.dart';
 
 class HeroWidget extends StatelessWidget {
-  const HeroWidget({super.key, required this.title});
+  const HeroWidget({super.key, required this.title, this.onPage});
 
   final String title;
+  final Widget? onPage;
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +18,18 @@ class HeroWidget extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: GestureDetector(
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    duration: Duration(seconds: 5),
-                    backgroundColor: Colors.yellow,
-                    behavior: SnackBarBehavior.floating,
-                    content: Text("Image cannot be clicked!"),
-                  ),
-                );
-              },
+              onTap: onPage != null
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return HeroPage();
+                          },
+                        ),
+                      );
+                    }
+                  : null,
               child: Image.asset(
                 "assets/images/new.jpeg",
                 color: Colors.amber,
