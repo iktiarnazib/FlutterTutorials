@@ -43,7 +43,6 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 HeroWidget(title: 'Login'),
-
                 SizedBox(height: 20.0),
                 TextField(
                   controller: controllerEmail,

@@ -34,7 +34,7 @@ class WidgetTree extends StatelessWidget {
               final SharedPreferences prefs =
                   await SharedPreferences.getInstance();
               await prefs.setBool(
-                KConstants.themeModeKey,
+                KConstants.themeMode,
                 isDarkModeNotifier.value,
               );
             },
