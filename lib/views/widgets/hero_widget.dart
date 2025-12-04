@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/data/constants.dart';
-import 'package:news/views/pages/hero_page.dart';
 
 class HeroWidget extends StatelessWidget {
   const HeroWidget({super.key, required this.title, this.onPage});
