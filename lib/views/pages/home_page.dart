@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/data/constants.dart';
+import 'package:news/views/widgets/card_widget.dart';
 import '../widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,67 +14,24 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             HeroWidget(title: 'Cha Coding'),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 20.0),
-              child: Column(
-                children: [
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "This is Cha Coding",
-                            style: KTextStyle.titleTextSyle,
-                          ),
-                          Text(
-                            "Learn flutter from Cha Coding with Iktiar, This is an app that helps learn flutter",
-                            style: KTextStyle.descriptionTextStyle,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "This is Cha Coding",
-                            style: KTextStyle.titleTextSyle,
-                          ),
-                          Text(
-                            "Learn flutter from Cha Coding with Iktiar, This is an app that helps learn flutter",
-                            style: KTextStyle.descriptionTextStyle,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "This is Cha Coding",
-                            style: KTextStyle.titleTextSyle,
-                          ),
-                          Text(
-                            "Learn flutter from Cha Coding with Iktiar, This is an app that helps learn flutter",
-                            style: KTextStyle.descriptionTextStyle,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            CardWidget(
+              title: 'Welcome to flutter',
+              description:
+                  'You will soon be able to develop cross platform apps.',
+            ),
+            CardWidget(
+              title: 'This is flutter',
+              description: 'Learning flutter is fun and exciting.',
+            ),
+            CardWidget(
+              title: 'Welcome to flutter',
+              description:
+                  'You will soon be able to develop cross platform apps.',
+            ),
+            CardWidget(
+              title: 'Welcome to flutter',
+              description:
+                  'You will soon be able to develop cross platform apps.',
             ),
             SizedBox(height: 20.0),
             OutlinedButton(

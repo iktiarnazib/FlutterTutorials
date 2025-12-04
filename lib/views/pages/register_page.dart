@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:news/views/widget_tree.dart';
 import 'package:news/views/widgets/hero_widget.dart';
 
@@ -22,8 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HeroWidget(title: 'Register'),
-
+                Lottie.asset('assets/lotties/register.json'),
                 SizedBox(height: 20.0),
                 TextField(
                   controller: controller,
@@ -49,13 +49,16 @@ class _RegisterPageState extends State<RegisterPage> {
                 SizedBox(height: 10.0),
                 FilledButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
                           return WidgetTree();
                         },
                       ),
+                      (route) {
+                        return false;
+                      },
                     );
                   },
                   style: FilledButton.styleFrom(
