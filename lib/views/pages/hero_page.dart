@@ -13,7 +13,10 @@ class _HeroPageState extends State<HeroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(children: [HeroWidget(title: 'Hero Page')]),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(children: [HeroWidget(title: 'Hero Page')]),
+      ),
     );
   }
 }

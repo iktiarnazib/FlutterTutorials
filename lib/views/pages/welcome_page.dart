@@ -3,9 +3,6 @@ import 'package:lottie/lottie.dart';
 import 'package:news/data/notifiers.dart';
 import 'package:news/views/pages/login_page.dart';
 import 'package:news/views/pages/onboarding_page.dart';
-import 'package:news/views/pages/register_page.dart';
-
-import '../widget_tree.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});

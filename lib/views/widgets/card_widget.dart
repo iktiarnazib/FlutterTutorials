@@ -16,7 +16,7 @@ class _CardWidgetState extends State<CardWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 5.0),
+      padding: EdgeInsets.only(top: 3.0),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(20.0),

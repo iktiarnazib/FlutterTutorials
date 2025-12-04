@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/data/constants.dart';
 import 'package:news/views/pages/hero_page.dart';
-import 'package:news/views/pages/login_page.dart';
 import 'package:news/views/widgets/card_widget.dart';
 import '../widgets/hero_widget.dart';
 
@@ -36,7 +35,8 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            HeroWidget(title: 'Cha Coding', onPage: LoginPage()),
+            HeroWidget(title: 'Cha Coding', onPage: HeroPage()),
+            SizedBox(height: 2.0),
             Column(
               children: List.generate(title.length, (index) {
                 return CardWidget(
@@ -44,53 +44,6 @@ class _HomePageState extends State<HomePage> {
                   description: Description.elementAt(index),
                 );
               }),
-            ),
-
-            OutlinedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    behavior: SnackBarBehavior.floating,
-                    backgroundColor: Colors.pink,
-                    duration: Duration(seconds: 5),
-                    content: Text(
-                      "This is the snackbar",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                );
-              },
-              child: Text("Show Snackbar"),
-            ),
-            Divider(
-              height: 20.0,
-              thickness: 2.0,
-              color: Colors.teal,
-              indent: 30.0,
-              endIndent: 30.0,
-            ),
-            SizedBox(height: 30.0, child: VerticalDivider(color: Colors.blue)),
-            OutlinedButton(
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog.adaptive(
-                      title: Text("Alert Dialog"),
-                      content: Text("Text for Alert Dialog"),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text('close'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
-              child: Text('Alert Dialog'),
             ),
           ],
         ),
