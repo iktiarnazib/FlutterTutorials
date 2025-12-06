@@ -25,6 +25,7 @@ class ProfilePage extends StatelessWidget {
                 fontSize: 22.0,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 20.0),
             SizedBox(
