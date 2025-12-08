@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ExpandedFlexiblePage extends StatelessWidget {
+class ExpandedFlexiblePage extends StatefulWidget {
   const ExpandedFlexiblePage({super.key});
+
+  @override
+  State<ExpandedFlexiblePage> createState() => _ExpandedFlexiblePageState();
+}
+
+class _ExpandedFlexiblePageState extends State<ExpandedFlexiblePage> {
+  bool switchOff = false;
 
   @override
   Widget build(BuildContext context) {
@@ -9,25 +16,25 @@ class ExpandedFlexiblePage extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Container(
-                  height: 30,
-                  color: Colors.pink,
-                  child: Text('Hello world'),
+          SwitchListTile.adaptive(
+            title: Row(
+              children: [
+                Icon(Icons.person),
+                Text('Person'),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [Icon(Icons.ring_volume), Text('Ring')],
+                  ),
                 ),
-              ),
-              Flexible(
-                flex: 5,
-                child: Container(
-                  height: 30,
-                  color: Colors.blue,
-                  child: Text('Hello world gklsdfgdklgdsgksdgkd'),
-                ),
-              ),
-            ],
+              ],
+            ),
+            value: switchOff,
+            onChanged: (bool value) {
+              setState(() {
+                switchOff = value;
+              });
+            },
           ),
         ],
       ),
