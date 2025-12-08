@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:news/views/pages/welcome_page.dart';
+
 import 'package:news/views/widget_tree.dart';
-import 'package:news/views/widgets/hero_widget.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
