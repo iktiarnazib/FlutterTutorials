@@ -13,25 +13,29 @@ class HeroWidget extends StatelessWidget {
       children: [
         Hero(
           tag: "Hero 1",
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-            child: GestureDetector(
-              onTap: onPage != null
-                  ? () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return onPage!;
-                          },
-                        ),
-                      );
-                    }
-                  : null,
-              child: Image.asset(
-                "assets/images/new.jpeg",
-                color: Colors.amber,
-                colorBlendMode: BlendMode.darken,
+          child: AspectRatio(
+            aspectRatio: 1920 / 1080,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: GestureDetector(
+                onTap: onPage != null
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return onPage!;
+                            },
+                          ),
+                        );
+                      }
+                    : null,
+                child: Image.asset(
+                  "assets/images/new.jpeg",
+                  fit: BoxFit.cover,
+                  color: Colors.amber,
+                  colorBlendMode: BlendMode.darken,
+                ),
               ),
             ),
           ),
