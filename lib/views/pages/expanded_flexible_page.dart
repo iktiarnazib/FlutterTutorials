@@ -16,25 +16,21 @@ class _ExpandedFlexiblePageState extends State<ExpandedFlexiblePage> {
       appBar: AppBar(),
       body: Column(
         children: [
-          SwitchListTile.adaptive(
-            title: Row(
-              children: [
-                Icon(Icons.person),
-                Text('Person'),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [Icon(Icons.ring_volume), Text('Ring')],
-                  ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  color: Colors.pink,
+                  child: Text('hello world'),
                 ),
-              ],
-            ),
-            value: switchOff,
-            onChanged: (bool value) {
-              setState(() {
-                switchOff = value;
-              });
-            },
+              ),
+              Flexible(
+                child: Container(
+                  color: Colors.amber,
+                  child: Text('Hello world'),
+                ),
+              ),
+            ],
           ),
         ],
       ),

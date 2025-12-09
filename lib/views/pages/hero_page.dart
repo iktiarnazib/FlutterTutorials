@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/views/pages/login_page.dart';
 import 'package:news/views/widgets/hero_widget.dart';
 
 class HeroPage extends StatefulWidget {
