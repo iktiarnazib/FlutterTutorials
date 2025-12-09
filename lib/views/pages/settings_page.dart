@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/views/pages/api_call_page.dart';
 import 'package:news/views/pages/expanded_flexible_page.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -25,6 +26,19 @@ class _SettingsPageState extends State<SettingsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ApiCallPage();
+                    },
+                  ),
+                );
+              },
+              child: Text('Api Page'),
+            ),
             OutlinedButton(
               onPressed: () {
                 Navigator.push(
