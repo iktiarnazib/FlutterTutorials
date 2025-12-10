@@ -84,6 +84,7 @@ class _ApiCallPageState extends State<ApiCallPage> {
     });
   }
 
+  bool showFirst = true;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -99,11 +100,93 @@ class _ApiCallPageState extends State<ApiCallPage> {
             IconButton(
               onPressed: _reload,
               icon: const Icon(Icons.refresh),
+<<<<<<< animatedcrossfade
+              onPressed: _refreshActivity,
+              tooltip: 'Refresh',
+=======
               tooltip: 'Get another activity',
+>>>>>>> main
             ),
           ],
         ),
         body: Center(
+<<<<<<< animatedcrossfade
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  setState(() {
+                    showFirst = !showFirst;
+                  });
+                },
+                child: Icon(Icons.casino),
+              ),
+              FutureBuilder<Activity>(
+                future: futureActivity,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    final data = snapshot.data!;
+                    return Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: AnimatedCrossFade(
+                        firstChild: Card(
+                          elevation: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  snapshot.data!.activity,
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(height: 12),
+
+                                Text("Type: ${data.type}"),
+                                Text("Participants: ${data.participants}"),
+                                Text("Price: ${data.price}"),
+                                Text("Availability: ${data.availability}"),
+                                Text("Accessibility: ${data.accessibility}"),
+                                Text("Duration: ${data.duration}"),
+                                Text("Kid Friendly: ${data.kidFriendly}"),
+                                Text("Key: ${data.key}"),
+
+                                if (data.link.isNotEmpty) ...[
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    "Link: ${data.link}",
+                                    style: const TextStyle(color: Colors.blue),
+                                  ),
+                                ],
+
+                                const SizedBox(height: 16),
+                                ElevatedButton.icon(
+                                  label: Text('Get Another Activity'),
+                                  onPressed: _refreshActivity,
+                                  icon: Icon(Icons.casino),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        secondChild: Image.asset('assets/images/new.jpeg'),
+                        crossFadeState: showFirst
+                            ? CrossFadeState.showFirst
+                            : CrossFadeState.showSecond,
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
+                  }
+
+                  if (snapshot.hasError) {
+                    return Text("Error: ${snapshot.error}");
+                  }
+=======
           child: FutureBuilder<Activity>(
             future: futureActivity,
             builder: (context, snapshot) {
@@ -158,9 +241,12 @@ class _ApiCallPageState extends State<ApiCallPage> {
                   ),
                 );
               }
+>>>>>>> main
 
-              return const CircularProgressIndicator();
-            },
+                  return const CircularProgressIndicator();
+                },
+              ),
+            ],
           ),
         ),
       ),
